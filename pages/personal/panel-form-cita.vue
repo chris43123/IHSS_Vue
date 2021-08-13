@@ -56,34 +56,100 @@
                     </div>
                 </div>
 
-                <div class="row citas">
-                    <div class="col-md-10">
-                        <div class="row cuadro-sm card-cita">
-                            <div class="col-md-12">
-                                <div class="row justify-content-between pb-3">
-                                    <div class="col-md-4 n-cita">
-                                        <span><strong>Cita - 02135</strong></span>
-                                    </div>
-                                    <div class="col-md-4 text-center">
-                                        <span>Hora:</span> 12:00 pm
-                                    </div>
-                                    <div class="col-md-4 text-end">
-                                        <span>Vacuna:</span> Pfizer
+                <div class="citas">
+                    <h6><strong>Información de Cita</strong></h6>
+                    <div class="row cuadro card-cita me-0">
+                        <p><strong  class="t-blue">Información Dosis - 1</strong></p>
+                        <div class="col-md-12">
+                            <div class="row justify-content-between">
+                                <div class="col-md-2 n-cita">
+                                    <span><strong>Cita - 02135</strong></span>
+                                    <div class="row mt-3 justify-content-between">
+                                        <div class="col-md-12">
+                                            <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
+                                            <span class="ms-3">Anya Taylor</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between">
-                                    <div class="col-md-6">
+                                <div class="col-md-2 bold">
+                                    <p>Centro Médico:</p>
+                                    <p>Ciudad:</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="t-gris">Clínica Periférica Calpules</p>
+                                    <p class="t-gris">San Pedro Sula</p>
+                                </div>
+                                <div class="col-md-2 bold">
+                                    <p>Hora Prevista:</p>
+                                    <p>Vacuna:</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="t-gris">7:30 am</p>
+                                    <p class="t-gris">Pfizer</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#" class="btn btn-primary">Completado</a>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                <div class="row cuadro card-cita me-0">
+                    <p><strong  class="t-blue">Información Dosis - 2</strong></p>
+                    <div class="col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-md-2 n-cita">
+                                <span><strong>Cita - 02135</strong></span>
+                                <div class="row mt-3 justify-content-between">
+                                    <div class="col-md-12">
                                         <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
                                         <span class="ms-3">Anya Taylor</span>
                                     </div>
-                                    <div class="col-md-6 text-end">
-                                        <a href="#">Ver detalles</a>
-                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-2 bold">
+                                <p>Centro Médico:</p>
+                                <p>Ciudad:</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="t-gris">Clínica Periférica Calpules</p>
+                                <p class="t-gris">San Pedro Sula</p>
+                            </div>
+                            <div class="col-md-2 bold">
+                                <p>Hora Prevista:</p>
+                                <p>Vacuna:</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="t-gris">7:30 am</p>
+                                <p class="t-gris">Pfizer</p>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="#" class="btn btn-gray">Pendiente</a>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
+
+                <div class="formulario">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="#">Comentario</label>
+                                <textarea name="" id=""></textarea>
+                                <p class="comentario">Información adicional que se quiera aportar.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="submit" value="Enviar">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
 
             </div>
         </div>
