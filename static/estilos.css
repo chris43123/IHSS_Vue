@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif !important;
-    font-size: 14px;
+    font-size: 14px!important;
     background: #F6F8F9 !important;
 }
 
@@ -23,7 +23,7 @@ span {
 }
 
 strong {
-    font-weight: 600;
+    font-weight: 600!important;
 }
 
 .t-red {
@@ -65,7 +65,17 @@ strong {
 
 .cuadro {
     background: #fff;
-    padding: 20px 30px;
+    padding: 20px 30px!important;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 0px rgba(210,210,210,0.75);
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(210,210,210,0.75);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(210,210,210,0.75);
+}
+
+.cuadro-sm {
+    background: #fff;
+    padding: 10px 15px!important;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px 0px rgba(210,210,210,0.75);
@@ -170,6 +180,12 @@ strong {
     border-bottom: 1px solid #E5E9EB;
 }
 
+.espaciado {
+    margin: 20px 0;
+    width: 100%;
+    display: block;
+}
+
 .sidebar .items .dropdown-container {
     display: none;
     padding-left: 8px;
@@ -206,7 +222,7 @@ strong {
 /* Panel */
 
 .panel {
-    padding: 10px 40px;
+    padding: 10px 40px!important;
     background: #F6F8F9;
     border-left: 1px solid #E5E9EB;
 }

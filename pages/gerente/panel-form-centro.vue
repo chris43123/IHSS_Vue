@@ -9,7 +9,7 @@
             <a href="#"><i class="fas fa-bell"></i></a>
             <a href="#"><i class="fas fa-question-circle"></i></a>
             <a href="#"><i class="fas fa-cog"></i></a>
-          
+            <a href="#"><img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt=""></a>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
 
                 <div class="row justify-content-between info">
                     <div class="col-md-6">
-                        <h4>Nueva Campaña</h4>
+                        <h4>Agregar Centro Médico</h4>
                     </div>
                     <div class="col-md-6 right">
                         <h4>23, septiembre 2021</h4>
@@ -68,94 +68,60 @@
                         <form action="#">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="#">Nombre de la campaña</label>
-                                    <input type="text" name="" id="" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="#">Aprobada por</label>
-                                    <input type="text" name="" id="" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="#">Fecha de inicio</label>
-                                    <input type="date" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="#">Fecha de finalización</label>
-                                    <input type="date" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="#">Vacunas aprobadas</label>
+                                    <label for="#">Centro médico</label>
                                     <select name="" id="" required>
                                         <option value="">Seleccione--</option>
-                                        <option value="">Pfizer</option>
-                                        <option value="">Moderna</option>
-                                        <option value="">Astrazeneca</option>
+                                        <option value="">Clínica Calpules</option>
+                                        <option value="">Clínica Periférica</option>
+                                        <option value="">Clínica Tegucigalpa</option>
                                     </select>
                                     <a href="#" class="btn btn-primary btn-sm mt-2">Buscar</a>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="cuadro-gris mt-2">
-                                        <p>Pfizer</p>
-                                        <p>Astrazeneca</p>
-                                        <p>Moderna</p>
+                                <div class="col-md-12">
+                                    <div class="cuadro-gris mt-4">
+                                        <h6><strong>Información - Clínica Calpules</strong></h6>
+                                        <div class="row pt-3">
+                                            <div class="col-md-3">
+                                                <p>Ciudad:</p>
+                                                <p>Dirección:</p>
+                                                <p>No. de colaboradores:</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p class="t-gris">San Pedro Sula</p>
+                                                <p class="t-gris">Col. Calpules</p>
+                                                <p class="t-gris">22</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p>Jefe de Centro:</p>
+                                                <p>Código:</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <p class="t-gris">Marvin Coto</p>
+                                                <p class="t-gris">12</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="#">Población Meta</label>
-                                    <input type="number" required>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="#">Edad mínima</label>
+                                    <label for="#">Campaña</label>
                                     <select name="" id="" required>
-                                        <option value="">18-</option>
-                                        <option value="">18-30</option>
-                                        <option value="">30-50</option>
-                                        <option value="">50-65</option>
-                                        <option value="">65+</option>
+                                        <option value="">Seleccione--</option>
+                                        <option value="">Clínica Calpules</option>
+                                        <option value="">Clínica Periférica</option>
+                                        <option value="">Clínica Tegucigalpa</option>
                                     </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="#">Edad máxima</label>
-                                    <select name="" id="" required>
-                                        <option value="">18-</option>
-                                        <option value="">18-30</option>
-                                        <option value="">30-50</option>
-                                        <option value="">50-65</option>
-                                        <option value="">65+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="pt-4">Enfermedades Base</label>
                                 </div>
                             </div>
                             <div class="row checkbox">
                                 <div class="col-md-6">
                                     <input type="checkbox">
-                                    <label for="#">Enfermedad pulmonar obstructiva crónica (EPOC) </label>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <input type="checkbox">
-                                    <label for="#">Cáncer de pulmón</label>
-                                </div>
-                            </div>
-                            <div class="row checkbox">
-                                <div class="col-md-6">
-                                    <input type="checkbox">
-                                    <label for="#">Fibrosis quística</label>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <input type="checkbox">
-                                    <label for="#">Fibrosis pulmonar</label>
+                                    <label for="#">Cadena de frío</label>
+                                    <p class="comentario">Marque esta opción en el caso de que el centro médico disponga de una cadena de frío.</p>
                                 </div>
                             </div>
                             <div class="row">
