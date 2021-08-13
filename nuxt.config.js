@@ -12,8 +12,20 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/estilos.css' },
+      { type: 'text/css', rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Ubuntu'
+      }
+      //{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap' },
+      //<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+     // { href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' }
+    ],
+    script:[{
+      //src: '/dropdown.js'
+  }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -22,6 +34,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    //'@/bootstrap',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,6 +48,20 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        //import whole set
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        },
+        //import 2 icons from set 
+        // please note this is PRO set in this example, 
+        // you must have it in your node_modules to actually import
+        
+      ]
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

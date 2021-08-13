@@ -1,5 +1,5 @@
 <template>
-  <div v-if="info != undefinded">
+  <div v-if="info != 'undefined'">
     {{info.base_experience}}
   </div>
 </template>
