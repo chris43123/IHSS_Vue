@@ -27,26 +27,32 @@ strong {
 }
 
 .t-red {
-    color: #F87474;
+    color: #F87474!important;
 }
 
 .t-verde {
-    color: #00B929;
+    color: #2ecc71!important;
 }
 
 .t-blue {
-    color: #109CF1;
+    color: #109CF1!important;
 }
 
 .t-gris {
-    color: #5B6871;
+    color: #5B6871!important;
 }
 
 .btn-primary {
-    background: #18A0FB;
-    border: none;
-    padding: 5px 20px;
-    border: none;
+    background: #18A0FB!important;
+    border: none!important;
+    padding: 5px 20px!important;
+    color: #fff!important;
+}
+
+.btn-gray {
+    background: #5B6871!important;
+    border: none!important;
+    padding: 5px 20px!important;
     color: #fff!important;
 }
 
@@ -92,7 +98,7 @@ strong {
 
 .cuadro-g{
     background: #F6F8F9;
-    padding: 20px 30px;
+    padding: 20px 30px!important;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -375,9 +381,6 @@ input[type=radio] {
     margin-left: 10px;
 }
 
-.panel .estadistica h1 {
-    color: #109CF1;
-}
 
 /* ----------------Reporte--------------------- */
 

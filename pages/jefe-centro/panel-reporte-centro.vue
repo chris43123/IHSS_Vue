@@ -110,43 +110,43 @@
                         <h5 class="pb-3">Personal de centro médico</h5>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>02</h1>
-                                <h5 class="t-blue">M. General</h5>
+                                <h1 class="t-blue">02</h1>
+                                <h5 class="">M. General</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>14</h1>
-                                <h5 class="t-blue">Enfermeras</h5>
+                                <h1 class="t-blue">14</h1>
+                                <h5 class="">Enfermeras</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>02</h1>
-                                <h5 class="t-blue">Cirujanos</h5>
+                                <h1 class="t-blue">02</h1>
+                                <h5 class="">Cirujanos</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>5</h1>
-                                <h5 class="t-blue">Laboratorio</h5>
+                                <h1 class="t-blue">5</h1>
+                                <h5 class="">Laboratorio</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>1</h1>
-                                <h5 class="t-blue">Epidemiólogo</h5>
+                                <h1 class="t-blue">1</h1>
+                                <h5 class="">Epidemiólogo</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>2</h1>
-                                <h5 class="t-blue">Otros</h5>
+                                <h1 class="t-blue">2</h1>
+                                <h5 class="">Otros</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
@@ -264,6 +264,12 @@
                             <div class="row pb-3">
                                 <div class="col-md-6"><p><strong>Sputnik</strong></p></div>
                                 <div class="col-md-6"><p class="text-end">0 <i class="fas fa-caret-down t-red"></i></p></div>
+                            </div>
+                        </div>
+
+                        <div class="row descargar">
+                            <div class="col-md-12">
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Descargar</a>
                             </div>
                         </div>
                     </div>

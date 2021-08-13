@@ -76,152 +76,161 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <h4>Reporte Individual de Centro Médico</h4>
+                        <h4>Reporte Individual de Vacuna</h4>
                         <p>Datos correspondientes al 31 de diciembre de 2021</p>
                     </div>
 
-                    <div class="row mt-4">
-                        <div class="col-md-8">
-                            <h5>Clínica Periférica Calpules</h5>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
                             <div class="row pt-3">
+                                <h5><strong>Pfizer</strong></h5>
                                 <div class="col-md-2 bold">
-                                    <p>Ciudad:</p>
-                                    <p>Horario:</p>
-                                    <p>Director:</p>
+                                    <p>Proveedor:</p>
+                                    <p>No de dosis:</p>
+                                    <p>Código:</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <p class="t-gris">San Pedro Sula</p>
-                                    <p class="t-gris">8:00 am - 7:30 pm</p>
-                                    <p class="t-gris">Cillian Murphy</p>
+                                <div class="col-md-2">
+                                    <p class="t-gris">Biontech</p>
+                                    <p class="t-gris">2</p>
+                                    <p class="t-gris">012</p>
                                 </div>
-                                <div class="col-md-2 bold">
-                                    <p>Dirección:</p>
-                                    <p>Categoría:</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <p class="t-gris">Col. Calpules</p>
-                                    <p class="t-gris">Clínica</p>
+                                <div class="col-md-7 cuadro-g ps-4">
+                                    <div class="row">
+                                        <p><strong>Características</strong></p>
+                                        <div class="col-md-3 bold">
+                                            <p>Porcentaje efectividad:</p>
+                                            <p>Temperatura de conservación:</p>
+                                            <p>Volúmen por dosis:</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="t-gris">95%</p>
+                                            <p class="t-gris">2 C - 8 C</p>
+                                            <p class="t-gris">0.5 cc</p>
+                                        </div>
+                                        <div class="col-md-3 bold">
+                                            <p>Precio de compra:</p>
+                                            <p>Periodo de conservación:</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="t-gris">12 euros</p>
+                                            <p class="t-gris">30 días</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="row cuadro">
+                                <h6 class="pb-3"><strong>Efectos Secundarios</strong></h6>
+                                <div class="col-md-4">
+                                    <div class="row checkbox">
+                                        <div class="col-md-12 pb-3">
+                                            <input type="checkbox" checked>
+                                            <label for="#">Fiebre alta</label>
+                                        </div>
+                                        <div class="col-md-12  pb-3">
+                                            <input type="checkbox">
+                                            <label for="#">Dolores musculares</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row checkbox">
+                                        <div class="col-md-12 pb-3">
+                                            <input type="checkbox" checked>
+                                            <label for="#">Cansancio-Fatiga</label>
+                                        </div>
+                                        <div class="col-md-12 pb-3">
+                                            <input type="checkbox">
+                                            <label for="#">Dolor de cabeza</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="row checkbox">
+                                        <div class="col-md-12 pb-3">
+                                            <input type="checkbox">
+                                            <label for="#">Pérdida del olfato</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12 cuadro-g p-4">
+                            <h6><strong>Información Adicional</strong></h6>
+                            <p>Según el SAGE, la vacuna de ARN mensajero contra la COVID-19 de Pfizer-BioNTech es segura y eficaz. Con todo, hay grupos de población 
+                                para los que no se recomienda la vacunación, ya sea debido a contraindicaciones, falta de suministros o falta de datos. Actualmente 
+                                esos grupos los constituyen las personas con antecedentes de alergias graves, la mayoría de las mujeres embarazadas, viajeros 
+                                internacionales que no forman parte de un grupo prioritario y menores de 16 años.
+
+                                Antes de inmunizar a la población en general, la prioridad es comenzar a vacunar a los trabajadores sanitarios con alto riesgo de
+                                exposición y, a continuación, a las personas mayores.
+                            </p>
+                            <p>Por lo general, la OMS no emite recomendaciones específicas sobre cada vacuna, sino sobre el conjunto de todas ellas para una enfermedad, 
+                                a menos que las pruebas parezcan indicar que se requiere aplicar un planteamiento diferente. Debido a la gran variedad de vacunas contra 
+                                la COVID-19 obtenidas en plataformas tecnológicas muy diferentes, la OMS está examinando vacunas autorizadas por organismos nacionales de 
+                                reglamentación altamente competentes que estén disponibles en cantidades suficientes para atender las necesidades de muchos países. 
+                                La OMS no tiene ninguna preferencia por ningún producto, y la variedad de estos, con sus atributos específicos y requisitos de 
+                                manipulación, permite a los países encontrar aquellos más adecuados en función de sus circunstancias.
+                            </p>
+                            <a href="#" class="t-blue">Ver detalles <i class="far fa-plus-square"></i></a>
                         </div>
                     </div>
 
                     <div class="row mt-4 estadistica">
-                        <h5 class="pb-3">Personal de centro médico</h5>
+                        <h6 class="pb-3"><strong>Estadísticas Generales</strong></h6>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>02</h1>
-                                <h5 class="t-blue">M. General</h5>
+                                <h1 class="t-blue">8,500</h1>
+                                <h5>Inventario</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>14</h1>
-                                <h5 class="t-blue">Enfermeras</h5>
+                                <h1>1,500</h1>
+                                <h5>Reservadas</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>02</h1>
-                                <h5 class="t-blue">Cirujanos</h5>
+                                <h1 class="t-verde">7,000</h1>
+                                <h5>Disponibles</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>5</h1>
-                                <h5 class="t-blue">Laboratorio</h5>
+                                <h1 class="t-red">145</h1>
+                                <h5>Dañadas</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="cuadro-g dato">
-                                <h1>1</h1>
-                                <h5 class="t-blue">Epidemiólogo</h5>
-                                <a href="#">Ver detalles</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="cuadro-g dato">
-                                <h1>2</h1>
-                                <h5 class="t-blue">Otros</h5>
+                                <h1 class="t-gris">645</h1>
+                                <h5>En revisión</h5>
                                 <a href="#">Ver detalles</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="row mt-4">
-                        <div class="col-md-12 cuadro tabla-inventario">
-                            <h4><strong>Resumen General de citas</strong></h4>
-                            <table class="table table-hover">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Vacuna</th>
-                                    <th scope="col">Inventario</th>
-                                    <th scope="col">Dañadas</th>
-                                    <th scope="col">Aplicadas</th>
-                                    <th scope="col">Reservadas</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">Moderna</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">Pfizer</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">Astrazeneca</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">Sputnik</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">Johnson</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">Dengvaxia</th>
-                                    <td>1,250</td>
-                                    <td class="t-red">121</td>
-                                    <td>4,560</td>
-                                    <td>652</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                        </div>   
-                    </div>
-
-                    <div class="row mt-4">
-                        <h4>Estadística de flujo de citas por campaña</h4>
+                        <h6><strong>Distribución de insumos en los centros médicos</strong></h6>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col-md-3 cuadro-g me-3">
                             <div class="row pt-3">
                                 <div class="col-md-12">
-                                    <h6 class="t-blue">COVID-19</h6>
+                                    <h6 class="t-blue">Clínicas</h6>
                                     <div class="separar"></div>
                                 </div>
                             </div>
@@ -245,7 +254,7 @@
                         <div class="col-md-3 cuadro-g me-3">
                             <div class="row pt-3">
                                 <div class="col-md-12">
-                                    <h6 class="t-blue">COVID-19</h6>
+                                    <h6 class="t-blue">Hospitales</h6>
                                     <div class="separar"></div>
                                 </div>
                             </div>
@@ -265,10 +274,41 @@
                                 <div class="col-md-6"><p><strong>Sputnik</strong></p></div>
                                 <div class="col-md-6"><p class="text-end">0 <i class="fas fa-caret-down t-red"></i></p></div>
                             </div>
+                        </div>
+                        <div class="col-md-3 cuadro-g me-3">
+                            <div class="row pt-3">
+                                <div class="col-md-12">
+                                    <h6 class="t-blue">Centros de Vacunación</h6>
+                                    <div class="separar"></div>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-6"><p><strong>Pfizer</strong></p></div>
+                                <div class="col-md-6"><p class="text-end">650 <i class="fas fa-caret-up t-verde"></i></p></div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-6"><p><strong>Moderna</strong></p></div>
+                                <div class="col-md-6"><p class="text-end">40 <i class="fas fa-caret-down t-red"></i></p></div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-6"><p><strong>Astrazeneca</strong></p></div>
+                                <div class="col-md-6"><p class="text-end">250 <i class="fas fa-caret-up t-verde"></i></p></div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-6"><p><strong>Sputnik</strong></p></div>
+                                <div class="col-md-6"><p class="text-end">0 <i class="fas fa-caret-down t-red"></i></p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row descargar">
+                        <div class="col-md-12">
+                            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Descargar</a>
                         </div>
                     </div>
 
                 </div>
+                
 
 
             </div>

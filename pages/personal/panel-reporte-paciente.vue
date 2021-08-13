@@ -316,7 +316,7 @@
 
                     <div class="row descargar">
                         <div class="col-md-12">
-                            <a href="javascript:imprSelec('imprimir')" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</a>
                         </div>
                     </div>
                     

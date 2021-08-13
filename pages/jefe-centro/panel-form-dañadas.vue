@@ -105,7 +105,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="#">Numero de Lote</label>
-                                    <input type="number" required>
+                                    <input type="text" pattern="[0-9]{5}" required title="Se require un valor númerico de 5 dígitos">
                                     <p class="comentario">El número de lote corresponde a un valor de 5 dígitos.</p>
                                 </div>
                                 <div class="col-md-6">
