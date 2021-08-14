@@ -265,44 +265,43 @@ strong {
     font-weight: 200;
 }
 
-.panel .right{
+.right{
     display: flex;
     justify-content: flex-end;
 }
 
-.panel .citas {
+.citas {
     padding: 20px 0;
 }
 
-.panel .c-citas {
+.c-citas {
     padding-left: 10px;
 }
 
-.panel .citas h6 {
+.citas h6 {
     display: block;
     padding-bottom: 10px;
 }
 
-.panel .citas .card-cita {
+.citas .card-cita {
     padding: 10px;
-    margin-right: 10px;
 }
 
-.panel .citas .card-cita strong {
+.citas .card-cita strong {
     color: #000;
 }
 
-.panel .citas .card-cita img {
+.citas .card-cita img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.panel .citas .card-cita a {
+.citas .card-cita a {
     color: #109CF1;
 }
 
-.panel .citas .card-cita a:hover {
+.citas .card-cita a:hover {
     cursor: pointer;
 }
 
@@ -403,27 +402,27 @@ input[type=radio] {
 
 /* ----------------Reporte--------------------- */
 
-.panel .reporte {
+.reporte {
     background: #fff;
     padding: 20px 45px;
 }
 
-.panel .reporte .dato-reporte {
+.reporte .dato-reporte {
     height: 70px;
     display: flex;
     align-items: center;
 }
 
-.panel .reporte .logo img{
+.reporte .logo img{
     height: 70px;
 }
 
 /* ----------------Reporte Paciente--------------------- */
 
-.panel .paciente .info-paciente .imagen img{
+.paciente .info-paciente .imagen img{
     width: 90%;
 }
 
-.panel .paciente .info-paciente .bold p {
+.paciente .info-paciente .bold p {
     font-weight: 600;
 }
