@@ -27,13 +27,13 @@
                     </div>
                 </div>
                 <div class="row items">
-                    <a href="panel-inicio.html" class="active"><i class="fas fa-home"></i><span>Inicio</span> </a>    
+                    <a href="panel-inicio" class="active"><i class="fas fa-home"></i><span>Inicio</span> </a>    
                     <button class="dropdown-btn">Nuevo Formulario
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-container">
-                        <a href="panel-form-centro.html"><i class="fas fa-file-medical-alt"></i><span>Centro Médico</span></a>
-                        <a href="panel-form-campaña.html"><i class="fas fa-cubes"></i><span>Campaña</span></a>
+                        <a href="panel-form-centro"><i class="fas fa-file-medical-alt"></i><span>Centro Médico</span></a>
+                        <a href="panel-form-campaña"><i class="fas fa-cubes"></i><span>Campaña</span></a>
                         <a href="#"><i class="fas fa-user"></i><span>Informe</span></a>
                     </div>
 
