@@ -37,11 +37,12 @@
               <h4>23, septiembre 2021</h4>
             </div>
           </div>
-
+           
           <div class="row citas">
             <h6>Listado de citas diarias</h6>
             <div class="col-md-12">
               <div class="row" v-if="info != 'undefined'">
+                  
                 <div
                   class="col-md-5 cuadro-sm card-cita m-2"
                   v-for="aff in info"
