@@ -153,7 +153,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://192.241.138.101:5560/api/Appointment/afiliado/1')
+      .get('http://192.241.138.101:5560/api/Appointment/afiliado/' + this.$route.query.idAfiliado)
       .then((response) => (this.info = response.data))
   },
 }

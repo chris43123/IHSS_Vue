@@ -66,7 +66,7 @@
                       <span class="ms-3">{{ aff.nombre }}</span>
                     </div>
                     <div class="col-md-6 text-end">
-                      <a href="#">Ver detalles</a>
+                      <router-link :to="{ path: 'panel-reporte-cita', query: {idAfiliado: aff.idAfiliado }}">Ver detalles</router-link>
                     </div>
                   </div>
                 </div>
