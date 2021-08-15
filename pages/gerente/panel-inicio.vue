@@ -117,6 +117,10 @@
 
 <script>
 export default {
-
+data() {
+    return {
+      info: null,
+    }
+  },
 }
 </script>
