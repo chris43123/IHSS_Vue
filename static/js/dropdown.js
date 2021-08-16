@@ -12,3 +12,8 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
+
+document.getElementById("form").addEventListener("click", function(event){
+  event.preventDefault()
+});

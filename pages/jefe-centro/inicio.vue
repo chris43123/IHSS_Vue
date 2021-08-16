@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             
-            <sidebar/>
+            <sidebar-jc/>
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">

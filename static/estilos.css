@@ -332,17 +332,17 @@ strong {
 
 /* ----------------FORMULARIO--------------------- */
 
-.formulario form label{
+.formulario label{
     display: block;
     padding: 10px 0;
 }
 
-.formulario form input[type=text],
-.formulario form input[type=number],
-.formulario form input[type=date],
-.formulario form input[type=email],
-.formulario form select,
-.formulario form textarea {
+.formulario input[type=text],
+.formulario input[type=number],
+.formulario input[type=date],
+.formulario input[type=email],
+.formulario select,
+.formulario textarea {
     display: block;
     width: 100%;
     padding: 5px 10px;
@@ -350,7 +350,7 @@ strong {
     border: 1px solid #3C444D;
 }
 
-.formulario form textarea {
+.formulario textarea {
     height: 150px;
     max-height: 300px;
 }
@@ -361,7 +361,7 @@ strong {
     color: #5B6871;
 }
 
-.formulario form input[type=submit] {
+.formulario input[type=submit] {
     border: none;
     background: #18A0FB;
     color: #fff;
@@ -371,7 +371,7 @@ strong {
     border-radius: 5px;
 }
 
-.formulario form input[type=submit]:hover {
+.formulario input[type=submit]:hover {
     background: #128cdd;
 }
 

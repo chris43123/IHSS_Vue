@@ -17,7 +17,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <sidebar />
+        <sidebar-jc />
 
         <div class="col-md-10 panel">
           <div class="row justify-content-between top">
@@ -40,14 +40,14 @@
                 <div class="row">
                   <div class="col-md-6">
                     <label for="#">Afiliado:</label>
-                    <input type="text" required v-model="search.text" />
+                    <input type="text"  pattern="[0-9]{5}" v-model="search.text" />
                     <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
                   </div>
                 </div>
             </div>
           </div>
 
-          <div class="reporte paciente mt-4" id="imprimir">
+          <div class="reporte paciente mt-4" id="imprimir" v-if="!!info">
             <div class="row">
               <div class="col-md-6 logo">
                 <img src="~/assets/ihss.jpg" alt="" />
@@ -87,13 +87,13 @@
                     <p>Identidad:</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="t-gris">Anya</p>
-                    <p class="t-gris">Taylor-Joy</p>
-                    <p class="t-gris">11/05/1999</p>
-                    <p class="t-gris">Hondureño</p>
-                    <p class="t-gris">Femenino</p>
-                    <p class="t-gris">San Pedro Sula</p>
-                    <p class="t-gris">0501-1997-0000</p>
+                    <p class="t-gris">{{info.nombre}}</p>
+                    <p class="t-gris">{{info.apellidos}}</p>
+                    <p class="t-gris">{{toDate(info.fechaNacimiento)}}</p>
+                    <p class="t-gris">{{info.nacionalidad}}</p>
+                    <p class="t-gris">{{info.sexo}}</p>
+                    <p class="t-gris">{{info.direccion}}</p>
+                    <p class="t-gris">{{info.noIdentidad}}</p>
                   </div>
                 </div>
               </div>
@@ -106,84 +106,57 @@
                     <p>Empresa:</p>
                   </div>
                   <div class="col-md-6">
-                    <p class="t-gris">1325</p>
-                    <p class="t-gris">12/05/2014</p>
-                    <p class="t-gris">Diunsa</p>
+                    <p class="t-gris">{{info.idAfiliado}}</p>
+                    <p class="t-gris">{{toDate(info.fechaAfiliacion)}}</p>
+                    <p class="t-gris">{{info.empresa}}</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4"></div>
             </div>
 
-            <div class="row citas">
-              <div class="col-md-12">
-                <div class="cuadro-g mt-4">
-                  <h6><strong>Proceso de vacunación</strong></h6>
-                  <p>23, septiembre 2021</p>
-                  <div class="row cuadro-sm card-cita p-3">
-                    <div class="col-md-10">
-                      <div class="row justify-content-between pb-3">
-                        <div class="col-md-4 n-cita">
-                          <span><strong>Cita - 02135</strong></span>
-                          <div class="espaciado"></div>
-                          <div class="col-md-12">
-                            <img
-                              src="~/assets/anya-taylor-joy-getty1-t.jpg"
-                              alt=""
-                            />
-                            <span class="ms-3">Anya Taylor</span>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <span>Centro Médico:</span> Clínica Periférica
-                          Calpules
-                          <div class="espaciado"></div>
-                          <span>Ciudad:</span> San Pedro Sula, Cortés
-                        </div>
-                        <div class="col-md-4">
-                          <span>Hora Prevista:</span> 07:30 am
-                          <div class="espaciado"></div>
-                          <span>Vacuna:</span> Pfizer
+            <div class="citas" v-if="cita != 'undefined'">
+              <h6><strong>Información de Cita</strong></h6>
+              <div class="row cuadro card-cita me-0" v-for="aff in cita" :key="aff.idAfiliado">
+                <p><strong class="t-blue">Información Dosis</strong></p>
+                <div class="col-md-12">
+                  <div class="row justify-content-between">
+                    <div class="col-md-2 n-cita">
+                      <span><strong>Cita - {{aff.idCita}}</strong></span>
+                      <div class="row mt-3 justify-content-between">
+                        <div class="col-md-12">
+                          <img
+                            src="~/assets/anya-taylor-joy-getty1-t.jpg"
+                            alt=""
+                          />
+                          <span class="ms-3">{{aff.nombre}}</span>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-2">
-                      <a href="#" class="btn btn-primary btn-sm">Completado</a>
-                    </div>
-                  </div>
-
-                  <div class="row cuadro-sm card-cita p-3">
-                    <div class="col-md-10">
-                      <div class="row justify-content-between pb-3">
-                        <div class="col-md-4 n-cita">
-                          <span><strong>Cita - 02135</strong></span>
-                          <div class="espaciado"></div>
-                          <div class="col-md-12">
-                            <img
-                              src="~/assets/anya-taylor-joy-getty1-t.jpg"
-                              alt=""
-                            />
-                            <span class="ms-3">Anya Taylor</span>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <span>Hora Prevista:</span> 07:30 am
-                          <div class="espaciado"></div>
-                          <span>Vacuna:</span> Pfizer
-                        </div>
-                        <div class="col-md-4">
-                          <span>Hora Prevista:</span> 07:30 am
-                          <div class="espaciado"></div>
-                          <span>Vacuna:</span> Pfizer
-                        </div>
-                      </div>
+                    <div class="col-md-2 bold">
+                      <p>Centro Médico:</p>
+                      <p>Ciudad:</p>
                     </div>
                     <div class="col-md-2">
-                      <a href="#" class="btn btn-primary btn-sm">Completado</a>
+                      <p class="t-gris">{{aff.centroMedico}}</p>
+                      <p class="t-gris">San Pedro Sula</p>
+                    </div>
+                    <div class="col-md-2 bold">
+                      <p>Hora Prevista:</p>
+                      <p>Vacuna:</p>
+                    </div>
+                    <div class="col-md-2">
+                      <p class="t-gris">{{ toHours(aff.fecha) }}</p>
+                      <p class="t-gris">{{aff.vacuna}}</p>
+                    </div>
+                    <div class="col-md-2">
+                      <span class="btn btn-primary" v-if="aff.aplicada">Completado</span>
+                      <span class="btn btn-gray" v-else>Pendiente</span>
                     </div>
                   </div>
                 </div>
               </div>
+              
             </div>
 
             <div class="row">
@@ -340,21 +313,37 @@ export default {
     return {
       search: {},
       info: null,
-      test: {},
+      cita: null,
     }
   },
   methods:{
       buscar()
       {
-           axios
-      .get('http://192.241.138.101:5560/api/Appointment/afiliado/'+this.search.text)
-      .then((response) => (this.test = response.data))
-      }
-  },
-  mounted() {
-    axios
-      .get('http://192.241.138.101:5560/api/Appointment/1/')
-      .then((response) => (this.info = response.data))
+        axios
+          .get('http://192.241.138.101:5560/api/Affiliates/'+this.search.text)
+          .then((response) => {this.info = response.data
+            axios
+              .get('http://192.241.138.101:5560/api/Appointment/afiliado/' + this.info.idAfiliado)
+              .then((response) => (this.cita = response.data))
+          })
+      },
+      toDate(date) {
+        var your_date_object = new Date()
+        your_date_object.setTime(Date.parse(date))
+
+        var date = your_date_object.getDate()
+        var month = your_date_object.getMonth()
+        var year = your_date_object.getFullYear()
+        return date+ '/' + month + '/' + year; 
+    },
+    toHours(date) {
+      var your_date_object = new Date()
+      your_date_object.setTime(Date.parse(date))
+
+      var min = your_date_object.getMinutes()
+      var hour = your_date_object.getHours()
+      return (hour < 10 ? '0'+hour:hour) + ':' + (min<10 ? '0'+min:min) 
+    },
   },
 }
 </script>

@@ -16,7 +16,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <sidebar/>
+            <sidebar-jc />
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">
@@ -28,7 +28,19 @@
                     </div>
                 </div>
 
-                <div class="reporte pt-4">
+                <div class="row formulario">
+                    <div class="col-md-6">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <label for="#">Código Vacuna:</label>
+                            <input type="text" required v-model="search.text" />
+                            <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reporte mt-4 pt-4" v-if="!!info">
                     <div class="row">
                         <div class="col-md-6 logo">
                             <img src="~/assets/ihss.jpg" alt="">
@@ -49,16 +61,16 @@
                     <div class="row mt-2">
                         <div class="col-md-12">
                             <div class="row pt-3">
-                                <h5><strong>Pfizer</strong></h5>
+                                <h5><strong>{{info.nombre}}</strong></h5>
                                 <div class="col-md-2 bold">
                                     <p>Proveedor:</p>
                                     <p>No de dosis:</p>
                                     <p>Código:</p>
                                 </div>
                                 <div class="col-md-2">
-                                    <p class="t-gris">Biontech</p>
-                                    <p class="t-gris">2</p>
-                                    <p class="t-gris">012</p>
+                                    <p class="t-gris">{{info.proveedor}}</p>
+                                    <p class="t-gris">{{info.numeroDosis}}</p>
+                                    <p class="t-gris">{{info.idVacuna}}</p>
                                 </div>
                                 <div class="col-md-7 cuadro-g ps-4">
                                     <div class="row">
@@ -71,7 +83,7 @@
                                         <div class="col-md-3">
                                             <p class="t-gris">95%</p>
                                             <p class="t-gris">2 C - 8 C</p>
-                                            <p class="t-gris">0.5 cc</p>
+                                            <p class="t-gris">{{info.volumenDosis}}</p>
                                         </div>
                                         <div class="col-md-3 bold">
                                             <p>Precio de compra:</p>
@@ -79,7 +91,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <p class="t-gris">12 euros</p>
-                                            <p class="t-gris">30 días</p>
+                                            <p class="t-gris">{{info.periodoConservacion}} días</p>
                                         </div>
                                     </div>
                                 </div>
@@ -130,22 +142,8 @@
                     <div class="row mt-4">
                         <div class="col-md-12 cuadro-g p-4">
                             <h6><strong>Información Adicional</strong></h6>
-                            <p>Según el SAGE, la vacuna de ARN mensajero contra la COVID-19 de Pfizer-BioNTech es segura y eficaz. Con todo, hay grupos de población 
-                                para los que no se recomienda la vacunación, ya sea debido a contraindicaciones, falta de suministros o falta de datos. Actualmente 
-                                esos grupos los constituyen las personas con antecedentes de alergias graves, la mayoría de las mujeres embarazadas, viajeros 
-                                internacionales que no forman parte de un grupo prioritario y menores de 16 años.
-
-                                Antes de inmunizar a la población en general, la prioridad es comenzar a vacunar a los trabajadores sanitarios con alto riesgo de
-                                exposición y, a continuación, a las personas mayores.
-                            </p>
-                            <p>Por lo general, la OMS no emite recomendaciones específicas sobre cada vacuna, sino sobre el conjunto de todas ellas para una enfermedad, 
-                                a menos que las pruebas parezcan indicar que se requiere aplicar un planteamiento diferente. Debido a la gran variedad de vacunas contra 
-                                la COVID-19 obtenidas en plataformas tecnológicas muy diferentes, la OMS está examinando vacunas autorizadas por organismos nacionales de 
-                                reglamentación altamente competentes que estén disponibles en cantidades suficientes para atender las necesidades de muchos países. 
-                                La OMS no tiene ninguna preferencia por ningún producto, y la variedad de estos, con sus atributos específicos y requisitos de 
-                                manipulación, permite a los países encontrar aquellos más adecuados en función de sus circunstancias.
-                            </p>
-                            <a href="#" class="t-blue">Ver detalles <i class="far fa-plus-square"></i></a>
+                            <p>{{info.informacion}}</p>
+                            <a :href="info.url" class="t-blue">Ver detalles <i class="far fa-plus-square"></i></a>
                         </div>
                     </div>
 
@@ -275,8 +273,6 @@
 
                 </div>
                 
-
-
             </div>
         </div>
     </div>
@@ -287,7 +283,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  data() {
+    return {
+      search: {},
+      info: null,
+    }
+  },
+  methods:{
+      buscar()
+      {
+           axios
+            .get('http://192.241.138.101:5560/api/Vaccine/'+this.search.text)
+            .then((response) => (this.info = response.data))
+      }
+  },
 }
 </script>

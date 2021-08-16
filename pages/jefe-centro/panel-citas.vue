@@ -17,7 +17,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <sidebar />
+        <sidebar-jc />
 
         <div class="col-md-10 panel">
           <div class="row justify-content-between top">
@@ -44,11 +44,11 @@
               <div class="row" v-if="info != 'undefined'">
                   
                 <div
-                  class="col-md-5 cuadro-sm card-cita m-2"
+                  class="col-md-4 cuadro-sm card-cita m-2"
                   v-for="aff in info"
                   :key="aff.idAfiliado"
                 >
-                  <div class="row justify-content-between pb-3">
+                  <div class="row justify-content-between pb-2">
                     <div class="col-md-4 n-cita">
                       <span
                         ><strong>Cita - {{ aff.idAfiliado }}</strong></span
@@ -106,7 +106,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://192.241.138.101:5560/api/Appointment/1')
+      .get('http://192.241.138.101:5560/api/Appointment')
       .then((response) => (this.info = response.data))
   },
 }

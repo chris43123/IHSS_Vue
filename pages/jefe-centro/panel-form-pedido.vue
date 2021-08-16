@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             
-            <sidebar/>
+            <sidebar-jc />
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">
@@ -40,15 +40,14 @@
                 <div class="row formulario">
                     <p class="t-blue">Todos los campos son obligatorios.</p>
                     <div class="col-md-6">
-                        <form action="#">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="#">Campaña</label>
-                                    <select name="" id="" required>
-                                        <option value="">Seleccione--</option>
-                                        <option value="">COVID-19</option>
-                                        <option value="">Dengue</option>
-                                        <option value="">Cordyceps</option>
+                                    <select name="" v-model="pedido.campaña" required>
+                                        <option value="-1">Seleccione--</option>
+                                        <option value="7">COVID-19</option>
+                                        <option value="8">Dengue</option>
+                                        <option value="9">Cordyceps</option>
                                     </select>
                                     <a href="#" class="btn btn-primary btn-sm mt-2">Buscar</a>
                                 </div>
@@ -56,7 +55,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="#">Vacuna</label>
-                                    <select name="" id="" required>
+                                    <select name="" v-model="pedido.vacuna" required>
                                         <option value="">Seleccione--</option>
                                         <option value="">Pfizer</option>
                                         <option value="">Moderna</option>
@@ -65,33 +64,32 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="#">Cantidad</label>
-                                    <input type="number" min="1" required>
+                                    <input type="number" min="1" required  v-model="pedido.cantidad">
                                     <p class="comentario">Basado en la información del reporte de inventario.</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="#">Fecha de pedido</label>
-                                    <input type="date" name="" id="" required>
+                                    <input type="date" name="" required  v-model="pedido.fechaPedido">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="#">Fecha de entrega</label>
-                                    <input type="date" name="" id="" required>
+                                    <input type="date" name="" required  v-model="pedido.fechaEntrega">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label for="#">Comentario</label>
-                                    <textarea name="" id=""></textarea>
+                                    <textarea name="" v-model="pedido.comentario"></textarea>
                                     <p class="comentario">Información adicional que se quiera aportar.</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="submit" value="Enviar">
+                                    <button class="btn btn-primary" v-on:click="null"></button>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
 
@@ -105,7 +103,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+    data() {
+        pedido: {}
+    }
 }
 </script>

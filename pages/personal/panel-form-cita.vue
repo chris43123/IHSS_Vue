@@ -16,26 +16,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 sidebar">
-                <div class="row clinica">
-                    <div class="col-md-3">
-                        <i class="far fa-hospital"></i>
-                    </div>
-                    <div class="col-md-9">
-                        <h4>Clínica</h4>
-                        <p>Clínica Peiférica Calpules</p>
-                    </div>
-                </div>
-                <div class="row items">
-                    <a href="panel-inicio.html" class="active"><i class="fas fa-home"></i><span>Inicio</span> </a>
-                    <a href="panel-citas.html"><i class="fas fa-clipboard-check"></i><span>Citas</span></a>
-                    <a href="#"><i class="fas fa-tasks"></i><span>Reportes</span></a>
-
-                    <div class="separar"></div>
-                    <a href="#"><i class="fas fa-clipboard-check"></i><span>Nueva Cita</span></a>
-                    <a href="#"><i class="far fa-id-badge"></i><span>Pacientes Vacunados</span></a>
-                </div>
-            </div>
+            
+            <sidebar-p/>
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">
@@ -56,100 +38,59 @@
                     </div>
                 </div>
 
-                <div class="citas">
-                    <h6><strong>Información de Cita</strong></h6>
-                    <div class="row cuadro card-cita me-0">
-                        <p><strong  class="t-blue">Información Dosis - 1</strong></p>
-                        <div class="col-md-12">
-                            <div class="row justify-content-between">
-                                <div class="col-md-2 n-cita">
-                                    <span><strong>Cita - 02135</strong></span>
-                                    <div class="row mt-3 justify-content-between">
-                                        <div class="col-md-12">
-                                            <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
-                                            <span class="ms-3">Anya Taylor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 bold">
-                                    <p>Centro Médico:</p>
-                                    <p>Ciudad:</p>
-                                </div>
-                                <div class="col-md-2">
-                                    <p class="t-gris">Clínica Periférica Calpules</p>
-                                    <p class="t-gris">San Pedro Sula</p>
-                                </div>
-                                <div class="col-md-2 bold">
-                                    <p>Hora Prevista:</p>
-                                    <p>Vacuna:</p>
-                                </div>
-                                <div class="col-md-2">
-                                    <p class="t-gris">7:30 am</p>
-                                    <p class="t-gris">Pfizer</p>
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="#" class="btn btn-primary">Completado</a>
-                                </div>
-                            </div>
-                        
+                <div class="row formulario">
+                    <div class="col-md-6">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <label for="#">Afiliado:</label>
+                            <input type="text"  pattern="[0-9]{5}" v-model="search.text" />
+                            <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
                         </div>
-                    </div>
-
-                <div class="row cuadro card-cita me-0">
-                    <p><strong  class="t-blue">Información Dosis - 2</strong></p>
-                    <div class="col-md-12">
-                        <div class="row justify-content-between">
-                            <div class="col-md-2 n-cita">
-                                <span><strong>Cita - 02135</strong></span>
-                                <div class="row mt-3 justify-content-between">
-                                    <div class="col-md-12">
-                                        <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
-                                        <span class="ms-3">Anya Taylor</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 bold">
-                                <p>Centro Médico:</p>
-                                <p>Ciudad:</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="t-gris">Clínica Periférica Calpules</p>
-                                <p class="t-gris">San Pedro Sula</p>
-                            </div>
-                            <div class="col-md-2 bold">
-                                <p>Hora Prevista:</p>
-                                <p>Vacuna:</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p class="t-gris">7:30 am</p>
-                                <p class="t-gris">Pfizer</p>
-                            </div>
-                            <div class="col-md-2">
-                                <a href="#" class="btn btn-gray">Pendiente</a>
-                            </div>
                         </div>
-                        
                     </div>
                 </div>
 
-                <div class="formulario">
-                    <form action="#">
+                <div class="citas" v-if="citas != 'undefined'">
+                    <h6><strong>Información de Cita</strong></h6>
+                    <info-cita
+                        v-for="cita of citas"
+                        :key="cita.idCita"
+                        :idCita="cita.idCita"
+                        :nombre="cita.nombre"
+                        :centroMedico="cita.centroMedico"
+                        :fecha="cita.fecha"
+                        :aplicada="cita.aplicada"
+                        :vacuna="cita.vacuna"
+                    />
+
+                    <div class="row formulario">
+                    <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="#">Comentario</label>
-                                <textarea name="" id=""></textarea>
+                                <textarea name=""></textarea>
                                 <p class="comentario">Información adicional que se quiera aportar.</p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <input type="submit" value="Enviar">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary">Enviar</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+                    
                 </div>
                 
-            </div>
+
+                <div class="row">
+                    <div v-if="status==204" class="mt-3 col-md-4">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                No hay resultados que coincidan con el criterio de búsqueda.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -161,7 +102,24 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  data() {
+    return {
+      search: {},
+      citas: null,
+      status: null
+    }
+  },
+  methods:{
+      buscar()
+      {
+        axios
+          .get('http://192.241.138.101:5560/api/Appointment/afiliado/'+this.search.text)
+          .then((response) => {this.citas = response.data;
+                this.status = response.status
+            })
+      },
+  },
 }
 </script>

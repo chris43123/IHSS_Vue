@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             
-            <sidebar/>
+            <sidebar-jc />
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">
@@ -40,84 +40,84 @@
                 <div class="row formulario">
                     <p class="t-blue">Todos los campos son obligatorios.</p>
                     <div class="col-md-6">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="#">Campaña</label>
-                                    <select name="" id="" required>
-                                        <option value="">Seleccione--</option>
-                                        <option value="">COVID-19</option>
-                                        <option value="">Dengue</option>
-                                        <option value="">Cordyceps</option>
-                                    </select>
-                                    <a href="#" class="btn btn-primary btn-sm mt-2">Buscar</a>
-                                </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="#">Campaña</label>
+                                <select name="" id="" v-model="dañada.campaña">
+                                    <option value="-1">Seleccione--</option>
+                                    <option value="2">COVID-19</option>
+                                    <option value="3">Dengue</option>
+                                    <option value="4">Cordyceps</option>
+                                </select>
+                                <button class="btn btn-primary btn-sm mt-2"  v-on:click="null">Buscar</button>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="#">Vacuna</label>
-                                    <select name="" id="" required>
-                                        <option value="">Seleccione--</option>
-                                        <option value="">Pfizer</option>
-                                        <option value="">Moderna</option>
-                                        <option value="">Astrazeneca</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="#">Cantidad</label>
-                                    <input type="number" min="1" required>
-                                    <p class="comentario">Basado en la información del reporte de inventario.</p>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="#">Vacuna</label>
+                                <select name="" id=""  v-model="dañada.vacuna">
+                                    <option value="">Seleccione--</option>
+                                    <option value="">Pfizer</option>
+                                    <option value="">Moderna</option>
+                                    <option value="">Astrazeneca</option>
+                                </select>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="#">Numero de Lote</label>
-                                    <input type="text" pattern="[0-9]{5}" required title="Se require un valor númerico de 5 dígitos">
-                                    <p class="comentario">El número de lote corresponde a un valor de 5 dígitos.</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="#">Fecha</label>
-                                    <input type="date" name="" id="" required>
-                                </div>
+                            <div class="col-md-6">
+                                <label for="#">Cantidad</label>
+                                <input type="number" min="1" v-model="dañada.cantidad">
+                                <p class="comentario">Basado en la información del reporte de inventario.</p>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>Causas</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="#">Numero de Lote</label>
+                                <input type="text" v-model="dañada.lote">
+                                <p class="comentario">El número de lote corresponde a un valor de 5 dígitos.</p>
                             </div>
-                            <div class="row checkbox">
-                                <div class="col-md-4">
-                                    <input type="checkbox">
-                                    <label for="#">Daño-Transporte</label>
-                                </div>
-                                <div class="col-md-4 ">
-                                    <input type="checkbox">
-                                    <label for="#">Daño-Manipulación</label>
-                                </div>
+                            <div class="col-md-6">
+                                <label for="#">Fecha</label>
+                                <input type="date" name="" id=""  v-model="dañada.fecha">
                             </div>
-                            <div class="row checkbox">
-                                <div class="col-md-4">
-                                    <input type="checkbox">
-                                    <label for="#">Daño-Almacenamiento</label>
-                                </div>
-                                <div class="col-md-4 ">
-                                    <input type="checkbox">
-                                    <label for="#">Daño-Aplicación</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Causas</label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label for="#">Comentario</label>
-                                    <textarea name="" id=""></textarea>
-                                    <p class="comentario">Información adicional que se quiera aportar.</p>
-                                </div>
+                        </div>
+                        <div class="row checkbox">
+                            <div class="col-md-4">
+                                <input type="checkbox" v-model="dañada.transporte">
+                                <label for="#">Daño-Transporte</label>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" value="Enviar">
-                                </div>
+                            <div class="col-md-4 ">
+                                <input type="checkbox" v-model="dañada.Manipulacion">
+                                <label for="#">Daño-Manipulación</label>
                             </div>
-                        </form>
+                        </div>
+                        <div class="row checkbox">
+                            <div class="col-md-4">
+                                <input type="checkbox" v-model="dañada.almacenamiento">
+                                <label for="#">Daño-Almacenamiento</label>
+                            </div>
+                            <div class="col-md-4 ">
+                                <input type="checkbox" v-model="dañada.aplicacion">
+                                <label for="#">Daño-Aplicación</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="#">Comentario</label>
+                                <textarea name="" id="" v-model="dañada.comentario"></textarea>
+                                <p class="comentario">Información adicional que se quiera aportar.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-sm mt-2"  v-on:click="null">Enviar</button>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -131,7 +131,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+ data() {
+        dañada: {}
+    }
 }
 </script>

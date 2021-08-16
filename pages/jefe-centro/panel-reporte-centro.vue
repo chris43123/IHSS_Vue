@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             
-            <sidebar/>
+            <sidebar-jc />
 
             <div class="col-md-10 panel">
                 <div class="row justify-content-between top">
@@ -29,7 +29,19 @@
                     </div>
                 </div>
 
-                <div class="reporte pt-4">
+                <div class="row formulario">
+                    <div class="col-md-6">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <label for="#">Código Vacuna:</label>
+                            <input type="text" v-model="search.text" />
+                            <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reporte mt-4 pt-4" v-if="!!info">
                     <div class="row">
                         <div class="col-md-6 logo">
                             <img src="~/assets/ihss.jpg" alt="">
@@ -48,8 +60,8 @@
                     </div>
 
                     <div class="row mt-4">
-                        <div class="col-md-8">
-                            <h5>Clínica Periférica Calpules</h5>
+                        <div class="col-md-10">
+                            <h5>{{info.nombre}}</h5>
                             <div class="row pt-3">
                                 <div class="col-md-2 bold">
                                     <p>Ciudad:</p>
@@ -57,17 +69,21 @@
                                     <p>Director:</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <p class="t-gris">San Pedro Sula</p>
+                                    <p class="t-gris">{{info.ciudad}}</p>
                                     <p class="t-gris">8:00 am - 7:30 pm</p>
-                                    <p class="t-gris">Cillian Murphy</p>
+                                    <p class="t-gris">{{info.nombreJefe}}</p>
                                 </div>
                                 <div class="col-md-2 bold">
                                     <p>Dirección:</p>
                                     <p>Categoría:</p>
+                                    <p>No Colaboradores:</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <p class="t-gris">Col. Calpules</p>
-                                    <p class="t-gris">Clínica</p>
+                                <div class="col-md-4">
+                                    <p class="t-gris">{{info.direccion}}</p>
+                                    <p class="t-gris" v-if="info.tipo == 'C'">Clínica</p>
+                                    <p class="t-gris" v-else-if="info.tipo == 'H'">Hospital</p>
+                                    <p class="t-gris" v-else-if="info.tipo == 'A'">Centro de Adulto Mayor</p>
+                                    <p class="t-gris">{{info.cantidadColab}}</p>
                                 </div>
                             </div>
                         </div>
@@ -243,6 +259,14 @@
 
                 </div>
 
+                <div class="row">
+                    <div v-if="status==204" class="mt-3 col-md-4">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                No hay resultados que coincidan con el criterio de búsqueda.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -250,11 +274,29 @@
 
     <script src="../js/dropdown.js"></script>
     <script src="https://kit.fontawesome.com/5883557ab1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  data() {
+    return {
+      search: {},
+      info: null,
+      status: null,
+    }
+  },
+  methods:{
+      buscar()
+      {
+           axios
+            .get('http://192.241.138.101:5560/api/Facilities/'+this.search.text)
+            .then((response) => {this.info = response.data;
+                this.status = response.status
+            })
+      }
+  },
 }
 </script>
