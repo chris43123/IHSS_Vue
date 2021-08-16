@@ -42,6 +42,15 @@
             </div>
           </div>
 
+          <div class="row">
+                <div v-if="status2==true" class="mt-3 col-md-4">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Consulta realizada con éxito
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+
           <div class="reporte mt-4 pt-4" id="printableArea">
             <div class="row">
               <div class="col-md-6 logo">
@@ -64,6 +73,15 @@
             <div class="row mt-4">
               <h4>Reporte Individual de Cita</h4>
               <p>Datos correspondientes al 31 de diciembre de 2021</p>
+            </div>
+
+            <div class="row">
+              <div v-if="status2==false" class="mt-3 col-md-4">
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          No hay resultados que coincidan con el criterio de búsqueda.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+              </div>
             </div>
 
             
@@ -99,6 +117,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -123,16 +142,16 @@ export default {
       search: {},
       citas: null,
       info: null,
-      status: null
+      status: null,
+      status2: null
     }
   },
   async created() {
     try {
       const r1 = await axios.get('http://192.241.138.101:5560/api/Appointment/afiliado/' + this.$route.query.idAfiliado)
       this.citas =  r1.data;
-      if(r1.data.length == 0){
-        console.log("Arreglo vacio")
-      }
+      this.status = r1.status
+      console.log(this.status)
 
     } catch (error) {
       console.log(error);
@@ -144,7 +163,8 @@ export default {
         axios
         .get('http://192.241.138.101:5560/api/Appointment/afiliado/'+this.search.text)
         .then((response) => {this.citas = response.data;
-            this.status = response.status
+            this.status2 = response.data.length > 0
+            console.log(this.status2)
         })
       },
   },

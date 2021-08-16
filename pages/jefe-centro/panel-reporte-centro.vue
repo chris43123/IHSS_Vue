@@ -33,7 +33,7 @@
                     <div class="col-md-6">
                         <div class="row">
                         <div class="col-md-6">
-                            <label for="#">Código Vacuna:</label>
+                            <label for="#">Nombre Centro Médico:</label>
                             <input type="text" v-model="search.text" />
                             <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
                         </div>

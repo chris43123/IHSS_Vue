@@ -50,6 +50,26 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div v-if="status==204" class="mt-3 col-md-4">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                No hay resultados que coincidan con el criterio de búsqueda.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div v-if="status2==200" class="mt-3 col-md-4">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Registro completo con éxito.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div class="citas" v-if="citas != 'undefined'">
                     <h6><strong>Información de Cita</strong></h6>
                     <info-cita
@@ -64,32 +84,43 @@
                     />
 
                     <div class="row formulario">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label for="#">Comentario</label>
-                                <textarea name=""></textarea>
-                                <p class="comentario">Información adicional que se quiera aportar.</p>
+                        <div class="col-12">
+                            <div class="row">
+                                <div v-if="!!citas[0]"  >
+                                    <div class="col-md-3" v-if="citas[0].aplicada == false">
+                                        <label for="#">Estado cita 1</label>
+                                        <input type="radio" name="cita"  :value="citas[0].idCita" v-model="estado.idCita"/>
+                                        <label class="l-check" for="#">Cita 01</label>
+                                    </div>
+                                </div>
+                                <div v-if="!!citas[1]">
+                                    <div class="col-md-3" v-if="citas[1].aplicada == false">
+                                        <label for="#">Estado cita 2</label>
+                                        <input type="radio" name="cita" :value="citas[1].idCita" v-model="estado.idCita"/>
+                                        <label class="l-check" for="#">Cita 02</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <button class="btn btn-primary">Enviar</button>
+                            <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="#">Comentario</label>
+                                    <textarea name="" v-model="estado.comentario"></textarea>
+                                    <p class="comentario">Información adicional que se quiera aportar.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                    
-                </div>
-                
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" v-on:click="enviar()">Enviar</button>
+                                </div>
+                            </div>
 
-                <div class="row">
-                    <div v-if="status==204" class="mt-3 col-md-4">
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                No hay resultados que coincidan con el criterio de búsqueda.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>
@@ -98,6 +129,8 @@
 
     <script src="../js/dropdown.js"></script>
     <script src="https://kit.fontawesome.com/5883557ab1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
 </div>
 </template>
 
@@ -107,8 +140,11 @@ export default {
   data() {
     return {
       search: {},
-      citas: null,
-      status: null
+      citas: [],
+      status: null,
+      status2: null,
+      estado: {},
+
     }
   },
   methods:{
@@ -119,6 +155,16 @@ export default {
           .then((response) => {this.citas = response.data;
                 this.status = response.status
             })
+      },
+      enviar()
+      {
+        axios
+          .put('http://192.241.138.101:5560/api/Appointment/',this.estado)
+          .then((response) => {this.status2 = response.status;})
+          .then(this.buscar)
+          
+           this.estado.comentario=""
+           this.search.text="" 
       },
   },
 }

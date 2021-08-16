@@ -44,7 +44,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="#">Campaña</label>
-                                <select name="" id="" v-model="dañada.campaña">
+                                <select v-model="danada.campaña">
                                     <option value="-1">Seleccione--</option>
                                     <option value="2">COVID-19</option>
                                     <option value="3">Dengue</option>
@@ -56,28 +56,28 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="#">Vacuna</label>
-                                <select name="" id=""  v-model="dañada.vacuna">
-                                    <option value="">Seleccione--</option>
-                                    <option value="">Pfizer</option>
-                                    <option value="">Moderna</option>
-                                    <option value="">Astrazeneca</option>
+                                <select v-model="danada.vacuna">
+                                    <option value="-1">Seleccione--</option>
+                                    <option value="0">Pfizer</option>
+                                    <option value="1">Moderna</option>
+                                    <option value="2">Astrazeneca</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="#">Cantidad</label>
-                                <input type="number" min="1" v-model="dañada.cantidad">
+                                <input type="number" min="1" v-model="danada.cantidad">
                                 <p class="comentario">Basado en la información del reporte de inventario.</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="#">Numero de Lote</label>
-                                <input type="text" v-model="dañada.lote">
+                                <input type="text" v-model="danada.lote">
                                 <p class="comentario">El número de lote corresponde a un valor de 5 dígitos.</p>
                             </div>
                             <div class="col-md-6">
                                 <label for="#">Fecha</label>
-                                <input type="date" name="" id=""  v-model="dañada.fecha">
+                                <input type="date"  v-model="danada.fecha">
                             </div>
                         </div>
                         <div class="row">
@@ -87,28 +87,28 @@
                         </div>
                         <div class="row checkbox">
                             <div class="col-md-4">
-                                <input type="checkbox" v-model="dañada.transporte">
+                                <input type="checkbox" v-model="danada.transporte">
                                 <label for="#">Daño-Transporte</label>
                             </div>
                             <div class="col-md-4 ">
-                                <input type="checkbox" v-model="dañada.Manipulacion">
+                                <input type="checkbox" v-model="danada.Manipulacion">
                                 <label for="#">Daño-Manipulación</label>
                             </div>
                         </div>
                         <div class="row checkbox">
                             <div class="col-md-4">
-                                <input type="checkbox" v-model="dañada.almacenamiento">
+                                <input type="checkbox" v-model="danada.almacenamiento">
                                 <label for="#">Daño-Almacenamiento</label>
                             </div>
                             <div class="col-md-4 ">
-                                <input type="checkbox" v-model="dañada.aplicacion">
+                                <input type="checkbox" v-model="danada.aplicacion">
                                 <label for="#">Daño-Aplicación</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="#">Comentario</label>
-                                <textarea name="" id="" v-model="dañada.comentario"></textarea>
+                                <textarea v-model="danada.comentario"></textarea>
                                 <p class="comentario">Información adicional que se quiera aportar.</p>
                             </div>
                         </div>
@@ -134,7 +134,9 @@
 import axios from 'axios'
 export default {
  data() {
-        dañada: {}
+        return {
+            danada: {}
+        }
     }
 }
 </script>

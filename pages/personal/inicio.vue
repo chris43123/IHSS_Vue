@@ -62,32 +62,29 @@
                     </div>   
                 </div>
 
-                <div class="row citas">
-                    <div class="col-md-6">
-                        <div v-if="info != 'undefined'" >
-                            <div v-for="aff in info" :key="aff.idAfiliado">
-                                <div class="row cuadro-sm card-cita">
-                                    <div class="col">
-                                        <div class="row justify-content-between pb-2">
-                                            <div class="col-md-4 n-cita">
-                                                <span><strong>Cita - {{aff.idCita}}</strong></span>
-                                            </div>
-                                            <div class="col-md-4 text-center">
-                                                <span>Hora:</span> {{aff.fecha}}
-                                            </div>
-                                            <div class="col-md-4 text-end">
-                                                <span>Vacuna:</span> {{aff.idvacuna}}
-                                            </div>
-                                        </div>
-                                        <div class="row justify-content-between">
-                                            <div class="col-md-6">
-                                                <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
-                                                <span class="ms-3">{{aff.nombre}}</span>
-                                            </div>
-                                            <div class="col-md-6 text-end">
-                                                <a href="#">Ver detalles</a>
-                                            </div>
-                                        </div>
+                <div class="row citas" v-if="info != 'undefined'">
+                    <div class="col-md-4" v-for="aff in info" :key="aff.idAfiliado">
+
+                        <div class="row cuadro-sm card-cita me-2">
+                            <div class="col">
+                                <div class="row justify-content-between pb-2">
+                                    <div class="col-md-4 n-cita">
+                                        <span><strong>Cita - {{aff.idCita}}</strong></span>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <span>Hora:</span> {{toHours(aff.fecha)}}
+                                    </div>
+                                    <div class="col-md-4 text-end">
+                                        <span>Vacuna:</span> {{aff.idvacuna}}
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between">
+                                    <div class="col-md-6">
+                                        <img src="~/assets/anya-taylor-joy-getty1-t.jpg" alt="">
+                                        <span class="ms-3">{{aff.nombre}}</span>
+                                    </div>
+                                    <div class="col-md-6 text-end">
+                                        <router-link :to="{ path: 'panel-reporte-cita', query: {idAfiliado: aff.idAfiliado }}">Ver detalles</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -113,6 +110,16 @@ export default {
       info: null,
     }
   },
+  methods: {
+    toHours(date) {
+      var your_date_object = new Date()
+      your_date_object.setTime(Date.parse(date))
+
+      var min = your_date_object.getMinutes()
+      var hour = your_date_object.getHours()
+      return (hour < 10 ? '0'+hour:hour) + ':' + (min<10 ? '0'+min:min) 
+    }
+},
   mounted() {
     axios
       .get('http://192.241.138.101:5560/api/Appointment')
