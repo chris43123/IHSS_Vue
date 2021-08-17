@@ -43,7 +43,7 @@
                         <div class="row">
                         <div class="col-md-6">
                             <label for="#">Afiliado:</label>
-                            <input type="text"  pattern="[0-9]{5}" v-model="search.text" />
+                            <input type="text" v-model="search.text" />
                             <button v-on:click="buscar()" class="btn btn-primary btn-sm mt-2">Buscar</button>
                         </div>
                         </div>
@@ -162,9 +162,10 @@ export default {
           .put('http://192.241.138.101:5560/api/Appointment/',this.estado)
           .then((response) => {this.status2 = response.status;})
           .then(this.buscar)
-          
            this.estado.comentario=""
-           this.search.text="" 
+
+        //    .then(this.search.text="" )
+        
       },
   },
 }

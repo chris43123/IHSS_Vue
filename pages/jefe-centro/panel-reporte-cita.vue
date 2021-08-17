@@ -18,7 +18,7 @@
     <div class="container-fluid">
       <div class="row">
         
-        <sidebar-p />
+        <sidebar-jc />
 
         <div class="col-md-10 panel">
           <div class="row justify-content-between top">
@@ -135,8 +135,9 @@
 import axios from 'axios'
 import infoCita from '~/components/info-cita.vue'
 import DetalleCita from '~/components/detalle-cita.vue'
+import SidebarJc from '~/components/sidebar-jc.vue'
 export default {
-  components: { infoCita, DetalleCita },
+  components: { infoCita, DetalleCita, SidebarJc },
   data() {
     return {
       search: {},
